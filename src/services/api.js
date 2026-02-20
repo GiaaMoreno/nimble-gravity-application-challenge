@@ -21,3 +21,21 @@ export const getJobs = async () => {
 
     return response.json();
 }
+
+export const applyToJob = async (body) => {
+    const response  = await fetch(`{$BASE_URL}/api/candidate/apply-to-job`, {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json",
+        },
+        body: JSON.stringify(body),
+
+    });
+
+    if (!response.ok) {
+        throw new Error("Error applying to job");
+    }
+
+    return response.json();
+
+};

@@ -1,4 +1,4 @@
-const BASE_URL = "https://botfilter-h5ddh6dye8exb7ha.centralus-01.azurewebsites.net";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const getCandidateByEmail = async (email) => {
     const response = await fetch(
@@ -13,7 +13,7 @@ export const getCandidateByEmail = async (email) => {
 }
 
 export const getJobs = async () => {
-    const response = await fetch(`{$BASE_URL}/api/jobs/get-list`);
+    const response = await fetch(`${BASE_URL}/api/jobs/get-list`);
 
     if (!response.ok){
         throw new Error("Error fetching jobs");

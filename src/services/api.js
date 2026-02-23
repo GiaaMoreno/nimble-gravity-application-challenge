@@ -23,7 +23,7 @@ export const getJobs = async () => {
 }
 
 export const applyToJob = async (body) => {
-    const response  = await fetch(`{$BASE_URL}/api/candidate/apply-to-job`, {
+    const response  = await fetch(`${BASE_URL}/api/candidate/apply-to-job`, {
         method: "POST",
         headers: {
             "Content-Type":"application/json",

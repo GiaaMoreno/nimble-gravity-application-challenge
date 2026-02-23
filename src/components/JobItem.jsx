@@ -9,6 +9,12 @@ const JobItem = ({ job, candidate}) => {
     const handleSubmit = async () => {
         setLoading(true);
         setMessage("");
+
+        if (!repoUrl.startsWith("https://github.com/")) {
+            setMessage("Please enter a valid repository URL");
+            setLoading(false);
+            return;
+        }
         
         try {
             const response = await applyToJob({

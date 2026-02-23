@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getCandidateByEmail, getJobs } from './services/api'
 import JobList from "./components/JobList"
-//import './App.css'
+import './App.css'
 
 function App() {
   const [candidate, setCandidate] = useState(null);
@@ -40,12 +40,10 @@ function App() {
   if(error) return <p> Error: {error}</p>;
   
   return(
-    <div style={{padding: "2rem"}}>
+    <div className='container'>
 
       {candidate && (
-        <div
-          style={{marginBottom: "2rem", padding:"1rem", backgroundColor:"#f5f5f5", borderRadius:"8px"}}
-        > 
+        <div className='candidate'> 
           <h2>
             Applying as: {candidate.firstName} {candidate.lastName}
           </h2>

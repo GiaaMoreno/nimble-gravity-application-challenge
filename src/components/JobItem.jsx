@@ -35,13 +35,7 @@ const JobItem = ({ job, candidate}) => {
     };
 
     return (
-        <div
-         style={{
-            border: "1px solid #ccc",
-            padding: "1rem",
-            marginBottom: "1rem",
-            borderRadius: "8px",
-         }}>
+        <div className="job-card">
 
             <h3>{job.title}</h3>
 

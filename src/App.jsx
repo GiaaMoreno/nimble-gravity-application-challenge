@@ -15,16 +15,13 @@ function App() {
     const fetchData = async () => {  
       try {
         const candidateData = await getCandidateByEmail(email);
-        //console.log("Candidate: ", candidateData);
 
         const jobsData = await getJobs();
-        //console.log("Jobs: ", jobsData);
 
         setCandidate(candidateData);
         setJobs(jobsData);
      
       } catch (err) {
-        //console.error("Error fetching candidate:", err);
         
         setError(err.message);
       } finally {

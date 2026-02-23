@@ -22,6 +22,7 @@ const JobItem = ({ job, candidate}) => {
                 jobId: job.id,
                 candidateId: candidate.candidateId,
                 repoUrl: repoUrl,
+                applicationId: candidate.applicationId,
             });
 
             if (response.ok) {
